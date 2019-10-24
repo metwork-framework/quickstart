@@ -86,17 +86,6 @@ Edit `~/tutodata/virtualenv_sources/requirements-to-freeze.txt`, and add the fol
 psycopg2
 ```
 
-Because psycopg2 is a python wrapper upon a C library, we also need to load the C libpq library. Fortunately, it's already bundled in MetWork.
-
-Edit `~/tutodata/.layerapi2_dependencies` and add:
-
-``` bash
-...
-scientific_core@mfext
-```
-
-For more details on how MetWork deals with dependencies, refer to the mfext module documentation.
-
 Now, rebuild the environment:
 ``` bash
 # As mfdata user
@@ -113,7 +102,7 @@ yum -y install gcc
 # go back to user mfdata
 exit
 # rebuild your plugin
-make superclean # We use the 'superclean' target to remove junk that has been created by the previous failed build
+make develop
 ```
 
 Now, we are going to modify the plugin code to achieve our goal: insert the file contents in the database when a file arrives. Replace the content of ~/tutodata/main.py by:

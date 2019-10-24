@@ -10,6 +10,8 @@ First, we need to launch mfserv service. You could launch mfserv individually, b
 service metwork start
 ```
 
+> Note: if you don't have the `service` command installed, you can use `/etc/rc.d/init.d/metwork start` instead
+
 When it's done, you can check that mfserv is working. Open this url in your browser: `http://localhost:18868`
 
 You should see this:
