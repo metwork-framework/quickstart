@@ -8,8 +8,10 @@ Let's install it. Login as root user, and install mfadmin and mfsysmon:
 
 ``` bash
 # As root user
-yum -y install metwork-mfadmin metwork-mfsysmon
+yum -y install metwork-mfadmin-full metwork-mfsysmon
 ```
+
+> Note: `metwork-mfadmin-full` means "mfadmin module with all options (logs and metrics management)"
 
 Start the services:
 
