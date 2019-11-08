@@ -10,7 +10,7 @@ __Example of use case:__ Imagine that you have files that are provided to your a
 
 __Other example of use case:__ A third party app exports data every night in csv format and put it in a directory. When this csv file arrives, you want to trigger a task to insert it in a database.
 
-With mfdata, you can manage these kind of worklows. All you have to do is configuring the events that will trigger your app (most of the time it will be when a file arrives), and mfdata will launch your app when the events occur.
+With mfdata, you can manage these kind of workflows. All you have to do is configuring the events that will trigger your app (most of the time it will be when a file arrives), and mfdata will launch your app when the events occur.
 
 ### What are we going to do?
 

@@ -26,7 +26,7 @@ service metwork start
 
 ### Create and run the database
 
-The mfbase module supports different types of databases, such as postresql and webdav.
+The mfbase module supports different types of databases, such as postgresql and webdav.
 
 Let's create a postgresql database.
 
@@ -35,7 +35,7 @@ As for other MetWork Framework modules, in mfbase you begin by creating a plugin
 ``` bash
 # As mfbase user
 su - mfbase
-bootstap_plugin.py create foo
+bootstrap_plugin.py create foo
 ```
 
 Press enter several times to accept default values.
