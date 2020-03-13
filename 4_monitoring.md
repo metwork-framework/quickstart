@@ -21,7 +21,7 @@ service metwork start
 
 ### System monitoring
 
-Open `http://localhost:15602`in your browser, you will see the monitoring website, built upon Grafana open source project. Login with the following credentials:
+Open `http://localhost:15605`in your browser, you will see the monitoring website, built upon Grafana open source project. Login with the following credentials:
 * user: admin
 * password: admin
 
@@ -72,7 +72,7 @@ service metwork restart mfserv
 
 Now, you can make some hits on your API by calling several times `http://localhost:18868/tutorial?q=foobar`. These hits will be logged.
 
-Go back to the Grafana dashboard on `http://localhost:15602`, click on dashboards, select the mfserv dashboard, and you should see some web activity on the charts:
+Go back to the Grafana dashboard on `http://localhost:15605`, click on dashboards, select the mfserv dashboard, and you should see some web activity on the charts:
 
 ![alt text](./images/mfadmin_mfserv_grafana.png "mfadmin mfserv Grafana Dashboard")
 
