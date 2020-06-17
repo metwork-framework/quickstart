@@ -19,6 +19,8 @@ Start the services:
 service metwork start
 ```
 
+> Note: if you don't have the `service` command installed, you can use `/etc/rc.d/init.d/metwork start` instead
+
 ### System monitoring
 
 Open `http://localhost:15605`in your browser, you will see the monitoring website, built upon Grafana open source project. Login with the following credentials:
