@@ -33,6 +33,13 @@ As we are going to play with `nodejs` services, we need to add the `nodejs` sup
 yum -y install metwork-mfserv-layer-nodejs
 ```
 
+Just in case `make` is not installed on your system, as we need it to play with mfserv plugins :
+
+``` bash
+# As root user
+yum -y install make
+```
+
 That's all we need for now!
 
 [Next step: Create your first API >](./2_first_api.md)
