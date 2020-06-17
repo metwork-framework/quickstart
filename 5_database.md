@@ -24,6 +24,8 @@ Start the services:
 service metwork start
 ```
 
+> Note: if you don't have the `service` command installed, you can use `/etc/rc.d/init.d/metwork start` instead
+
 ### Create and run the database
 
 The mfbase module supports different types of databases, such as postgresql and webdav.
@@ -130,8 +132,6 @@ Before running this code, we have to install the 'pg' (postgresql) library for n
 ``` bash
 # As mfserv user
 cd ~/tutorial
-# In the current version of MetWork, npm is not loaded by default. This will be fixed in next version. Thus load the MetWork package containing npm.
-layer_load nodejs@mfext
 # Install pg library
 npm install pg
 # Restart the plugin
@@ -144,6 +144,7 @@ Now you can open again your browser on your API url `http://localhost:18868/tuto
 # As mfbase user
 su - mfbase
 psql -U plugin_foo -h localhost -p 7432 plugin_foo
+#Enter password `plugin_foo`
 SELECT * FROM records;
 \q
 ```
@@ -152,11 +153,11 @@ SELECT * FROM records;
 
 The process to configure monitoring for mfbase is very similar to mfserv. You have to tell mfbase to send its logs to mfadmin installed on localhost.
 
-Switch to mfadmin user:
+Switch to mfbase user:
 
 ``` bash
-# Switch to mfadmin user
-su - mfadmin
+# Switch to mfbase user
+su - mfbase
 ```
 
 And then edit the file `~/config/config.ini`. In the `[admin]` section, add `hostname=localhost`. It should look like that:
@@ -171,13 +172,15 @@ hostname=localhost
 ...
 ```
 
-Finally, restart mfadmin service:
+Finally, restart mfbase service:
 
 ``` bash
 # As root user
 su -
 service metwork restart mfbase
 ```
+
+> Note: if you don't have the `service` command installed, you can use `/etc/rc.d/init.d/metwork restart mfbase` instead
 
 Make some requests on your API url `http://localhost:18868/tutorial?q=foobar`, and open your Grafana dashboard: `http://localhost:15602`. Head to 'Dashboards / mfbase', and you should see a dashboard with some metrics about your database:
 
