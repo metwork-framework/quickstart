@@ -1,17 +1,14 @@
 # quickstart
 
-[//]: # (automatically generated from https://github.com/metwork-framework/resources/blob/master/cookiecutter/_%7B%7Bcookiecutter.repo%7D%7D/README.md)
+[//]: # (automatically generated from https://github.com/metwork-framework/github_organization_management/blob/master/common_files/README.md)
 
 **Status (master branch)**
-
 
 
 
 [![Drone CI](http://metwork-framework.org:8000/api/badges/metwork-framework/quickstart/status.svg)](http://metwork-framework.org:8000/metwork-framework/quickstart)
 [![Maintenance](https://github.com/metwork-framework/resources/blob/master/badges/maintained.svg)]()
 
-
-[//]: # (TABLE_OF_CONTENTS_PLACEHOLDER)
 
 
 
@@ -22,11 +19,6 @@ This repository hosts the MetWork Framework quickstart you can find online at:
 [https://metwork-framework.github.io/quickstart/](https://metwork-framework.github.io/quickstart/)
 
 (thanks to github pages)
-
-
-
-
-
 
 
 
