@@ -10,9 +10,9 @@ First, register the MetWork Framework stable repository. Login as root, copy the
 
 ``` bash
 cat >/etc/yum.repos.d/metwork.repo <<EOF
-[metwork_stable]
+[metwork_1_0]
 name=MetWork Stable
-baseurl=http://metwork-framework.org/pub/metwork/releases/rpms/stable/portable/
+baseurl=http://metwork-framework.org/pub/metwork/releases/rpms/release_1.0/portable/
 gpgcheck=0
 enabled=1
 metadata_expire=0
