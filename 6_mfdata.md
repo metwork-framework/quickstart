@@ -37,6 +37,8 @@ Start the services:
 service metwork start
 ```
 
+> Note: if you don't have the `service` command installed, you can use `/etc/rc.d/init.d/metwork start` instead
+
 ### Create your plugin
 
 Let's create a mfdata plugin and launch it.
@@ -46,6 +48,9 @@ Let's create a mfdata plugin and launch it.
 su - mfdata
 # Create your plugin with default template
 bootstrap_plugin.py create tutodata
+
+Press enter several times to accept default values.
+
 # Launch your plugin in dev mode
 cd tutodata
 make develop
@@ -93,18 +98,6 @@ cd ~/tutodata
 make develop
 ```
 
-If you get an error, it's probably because you don't have gcc compiler. If so, install it like this and rebuild your plugin:
-
-``` bash
-# As root user
-su -
-yum -y install gcc
-# go back to user mfdata
-exit
-# rebuild your plugin
-make develop
-```
-
 Now, we are going to modify the plugin code to achieve our goal: insert the file contents in the database when a file arrives. Replace the content of ~/tutodata/main.py by:
 
 ``` python
@@ -145,11 +138,12 @@ if __name__ == "__main__":
 
 One last thing we have to do is to configure the plugin routing rule to accept incoming files.
 
-Edit `~/tutodata/config.ini`, and modify the 'switch_logical_condition' parameter to set it to True:
+Edit `~/tutodata/config.ini`, and uncomment the two following lines to receive all incoming files in main step of the plugin
 
 ``` ini
 ...
-switch_logical_condition = True
+# [switch_rules:alwaystrue]
+# * = {{MFDATA_CURRENT_PLUGIN_NAME}}/main
 ...
 ```
 
@@ -169,7 +163,9 @@ You can now check that you get records in your database:
 # As mfbase user
 su - mfbase
 psql -U plugin_foo -h localhost -p 7432 plugin_foo
+#Enter password `plugin_foo`
 SELECT * FROM records;
+#You should see two more lines `foo` and `bar` in your database
 \q
 ```
 

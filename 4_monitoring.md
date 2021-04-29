@@ -23,7 +23,8 @@ service metwork start
 
 ### System monitoring
 
-Open `http://localhost:15605`in your browser, you will see the monitoring website, built upon Grafana open source project. Login with the following credentials:
+Open `http://localhost:15605` in your browser, you will see the monitoring website, built upon Grafana open source project.
+Click on `Grafana` (or open `http://localhost:15605/grafana/` in your browser) and login with the following credentials:
 * user: admin
 * password: admin
 
@@ -72,13 +73,16 @@ su -
 service metwork restart mfserv
 ```
 
+> Note: if you don't have the `service` command installed, you can use `/etc/rc.d/init.d/metwork restart mfserv` instead
+
 Now, you can make some hits on your API by calling several times `http://localhost:18868/tutorial?q=foobar`. These hits will be logged.
 
 Go back to the Grafana dashboard on `http://localhost:15605`, click on dashboards, select the mfserv dashboard, and you should see some web activity on the charts:
 
 ![alt text](./images/mfadmin_mfserv_grafana.png "mfadmin mfserv Grafana Dashboard")
 
-But Grafana only shows metrics. If you want to analyze your logs more precisely, MetWork Framework also ships with a Kibana dashboard. Head to `http://localhost:15605` and login with the following credentials:
+But Grafana only shows metrics. If you want to analyze your logs more precisely, MetWork Framework also ships with a Kibana dashboard.
+Head to `http://localhost:15605`, Click on `Kibana` (or open `http://localhost:15605/kibana/` in your browser) and login with the following credentials:
 * user: admin
 * password: admin
 
@@ -92,9 +96,13 @@ There is still one last thing that we may want to do with logs: send logs from t
 
 With MetWork Framework, this is really easy. It takes only one line of code!
 
-As mfserv user, in `~/tutorial/tutorial/server.js`, add a line:
+As mfserv user, in `~/tutorial/tutorial/server.js`, add 2 lines:
 
 ``` js
+
+const process = require('process')
+// Add the following line
+const metwork_tools = require('metwork-tools')
       ...
       res.send('Hello World tutorial! You have entered: ' + entry)
       // Add the following line
