@@ -1,7 +1,0 @@
-pipeline:
-  build:
-    image: jekyll/jekyll
-    commands:
-      - cp -Rf * /srv/jekyll/
-      - cat _config.yml |grep -v '^theme:' >/srv/jekyll/_config.yml
-      - cd /srv/jekyll && jekyll build
