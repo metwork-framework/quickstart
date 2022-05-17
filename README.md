@@ -6,7 +6,7 @@
 
 
 
-[![Drone CI](http://metwork-framework.org:8000/api/badges/metwork-framework/quickstart/status.svg)](http://metwork-framework.org:8000/metwork-framework/quickstart)
+[![GitHub CI](https://github.com/metwork-framework/quickstart/workflows/CI/badge.svg?branch=master)](https://github.com/metwork-framework/quickstart/actions?query=workflow%3ACI+branch%3Amaster)
 [![Maintenance](https://raw.githubusercontent.com/metwork-framework/resources/master/badges/maintained.svg)](https://github.com/metwork-framework/resources/blob/master/badges/maintained.svg)
 
 
